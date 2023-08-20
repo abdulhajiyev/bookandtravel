@@ -1,5 +1,5 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction } from "@remix-run/node";
+import { cssBundleHref } from '@remix-run/css-bundle';
+import type { LinksFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -7,12 +7,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import globalcss from "./styles/globals.css";
+} from '@remix-run/react';
+import globalcss from './styles/global.css';
+import { Navbar } from './components/Navbar';
+import { SiteHeader } from './components/SiteHeader';
+// import '@fontsource/questrial';
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: globalcss },
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
 export default function App() {
@@ -25,6 +28,8 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <SiteHeader />
+        {/* <Navbar /> */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
