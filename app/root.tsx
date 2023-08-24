@@ -9,8 +9,8 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import globalcss from './styles/global.css';
-import { Navbar } from './components/Navbar';
 import { SiteHeader } from './components/SiteHeader';
+import { SiteFooter } from './components/SiteFooter';
 // import '@fontsource/questrial';
 
 export const links: LinksFunction = () => [
@@ -29,11 +29,11 @@ export default function App() {
       </head>
       <body>
         <SiteHeader />
-        {/* <Navbar /> */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <SiteFooter />
       </body>
     </html>
   );
