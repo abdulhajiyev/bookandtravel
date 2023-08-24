@@ -6,17 +6,16 @@ import { Link } from '@remix-run/react';
 import { siteConfig } from '~/config/site';
 import { cn } from '~/lib/utils';
 import { Icons } from '~/components/icons';
-
+import Logo from '../assets/images/logo.svg';
 export function MainNav() {
   // const pathname = usePathname();
 
   return (
     <div className="mr-4 hidden md:flex md:justify-between md:w-full">
       <Link to="/" className="mr-6 flex items-center space-x-2 ">
-        <Icons.Logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
+        <div className="bg-white p-5 overflow-x-auto overflow-y-auto mt-14">
+          <img src={Logo} alt="Logo" />
+        </div>
       </Link>
       <nav className="flex items-center space-x-6 text-sm font-medium">
         <Link

@@ -3,6 +3,7 @@ export const siteConfig = {
   langs: ['AZE', 'ENG', 'RUS'],
   url: 'bookand.travel',
   ogImage: 'https://ui.shadcn.com/og.jpg',
+  // logo: { Logo },
   description:
     'Beautifully designed components built with Radix UI and Tailwind CSS.',
   links: {
