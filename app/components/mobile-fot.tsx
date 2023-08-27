@@ -141,8 +141,8 @@ export function MobileFot() {
                   <Link to="/tours" className="text-lg">
                     About B&T
                   </Link>
-                  <Link to="/tours" className="text-lg">
-                    Contact Us
+                  <Link to="/contact" className="text-lg">
+                    Contact Uss
                   </Link>
                 </div>
               </AccordionContent>

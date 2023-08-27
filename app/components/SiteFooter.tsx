@@ -92,7 +92,7 @@ export function SiteFooter() {
     ],
   };
   return (
-    <footer aria-labelledby="footer-heading" className="bg-background/95">
+    <footer aria-labelledby="footer-heading" className="bg-black text-white">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

@@ -1,6 +1,4 @@
-'use client';
-
-import { Link } from '@remix-run/react';
+import { Link, NavLink } from '@remix-run/react';
 // import { usePathname } from 'next/navigation';
 
 import { siteConfig } from '~/config/site';
@@ -18,15 +16,15 @@ export function MainNav() {
         </div>
       </Link>
       <nav className="flex items-center space-x-6 text-sm font-medium">
-        <Link
+        <NavLink
           to="/hello"
           className={cn(
-            'transition-colors hover:text-foreground/80',
+            'transition-colors hover:text-foreground/80 header-link',
             // pathname === '/docs' ? 'text-foreground' : 'text-foreground/60',
           )}
         >
           Documentation
-        </Link>
+        </NavLink>
         <Link
           to="/docs/components"
           className={cn(
