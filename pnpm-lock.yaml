@@ -68,6 +68,15 @@ dependencies:
   i18next:
     specifier: ^23.4.4
     version: 23.4.4
+  i18next-browser-languagedetector:
+    specifier: ^7.1.0
+    version: 7.1.0
+  i18next-fs-backend:
+    specifier: ^2.1.5
+    version: 2.1.5
+  i18next-http-backend:
+    specifier: ^2.2.1
+    version: 2.2.1
   isbot:
     specifier: ^3.6.8
     version: 3.6.8
@@ -83,9 +92,15 @@ dependencies:
   react-hook-form:
     specifier: ^7.45.4
     version: 7.45.4(react@18.2.0)
+  react-i18next:
+    specifier: ^13.2.0
+    version: 13.2.0(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: ^4.10.1
     version: 4.10.1(react@18.2.0)
+  remix-i18next:
+    specifier: ^5.3.0
+    version: 5.3.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(i18next@23.4.4)(react-i18next@13.2.0)(react@18.2.0)
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -3293,6 +3308,10 @@ packages:
     dependencies:
       event-target-shim: 5.0.1
 
+  /accept-language-parser@1.5.0:
+    resolution: {integrity: sha512-QhyTbMLYo0BBGg1aWbeMG4ekWtds/31BrEU+DONOg/7ax23vxpL03Pb7/zBmha2v7vdD3AyzZVWBVGEZxKOXWw==}
+    dev: false
+
   /accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
     engines: {node: '>= 0.6'}
@@ -3970,6 +3989,14 @@ packages:
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
+
+  /cross-fetch@3.1.6:
+    resolution: {integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==}
+    dependencies:
+      node-fetch: 2.6.12
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -4940,7 +4967,6 @@ packages:
 
   /fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
-    dev: true
 
   /fast-glob@3.2.11:
     resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
@@ -5381,6 +5407,12 @@ packages:
     resolution: {integrity: sha512-nAxA0v8+vXSBDt3AnRUNjyRIQ0rD+ntpbAp4LnPkumc5M9yUbSMa4XDU9Q6etY4f1Wp4bNgvc1yjiZtsTTrSng==}
     dev: true
 
+  /html-parse-stringify@3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: false
+
   /http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
     dev: true
@@ -5427,6 +5459,24 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
     dev: true
+
+  /i18next-browser-languagedetector@7.1.0:
+    resolution: {integrity: sha512-cr2k7u1XJJ4HTOjM9GyOMtbOA47RtUoWRAtt52z43r3AoMs2StYKyjS3URPhzHaf+mn10hY9dZWamga5WPQjhA==}
+    dependencies:
+      '@babel/runtime': 7.22.10
+    dev: false
+
+  /i18next-fs-backend@2.1.5:
+    resolution: {integrity: sha512-7fgSH8nVhXSBYPHR/W3tEXXhcnwHwNiND4Dfx9knzPzdsWTUTL/TdDVV+DY0dL0asHKLbdoJaXS4LdVW6R8MVQ==}
+    dev: false
+
+  /i18next-http-backend@2.2.1:
+    resolution: {integrity: sha512-ZXIdn/8NJIBJ0X4hzXfc3STYxKrCKh1fYjji9HPyIpEJfvTvy8/ZlTl8RuTizzCPj2ZcWrfaecyOMKs6bQ7u5A==}
+    dependencies:
+      cross-fetch: 3.1.6
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /i18next@23.4.4:
     resolution: {integrity: sha512-+c9B0txp/x1m5zn+QlwHaCS9vyFtmIAEXbVSFzwCX7vupm5V7va8F9cJGNJZ46X9ZtoGzhIiRC7eTIIh93TxPA==}
@@ -5522,6 +5572,11 @@ packages:
       has: 1.0.3
       side-channel: 1.0.4
     dev: true
+
+  /intl-parse-accept-language@1.0.0:
+    resolution: {integrity: sha512-YFMSV91JNBOSjw1cOfw2tup6hDP7mkz+2AUV7W1L1AM6ntgI75qC1ZeFpjPGMrWp+upmBRTX2fJWQ8c7jsUWpA==}
+    engines: {node: '>=14'}
+    dev: false
 
   /invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
@@ -6015,7 +6070,6 @@ packages:
   /lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
-    dev: true
 
   /lucide-react@0.268.0(react@18.2.0):
     resolution: {integrity: sha512-XP/xY3ASJAViqNqVnDRcEfdxfRB7uNST8sqTLwZhL983ikmHMQ7qQak7ZxrnXOVhB3QDBawdr3ANq0P+iWHP/g==}
@@ -6650,7 +6704,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: true
 
   /node-releases@2.0.13:
     resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
@@ -7257,6 +7310,26 @@ packages:
       react: 18.2.0
     dev: false
 
+  /react-i18next@13.2.0(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YD8xMc+I0jkHHLotd8ERMzZ53hMaCBVLCndbcbBveJn3FbppRP4jyYOAkmR8XItN01sTD9ilAjoEjpH1i42IgA==}
+    peerDependencies:
+      i18next: '>= 23.2.3'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.10
+      html-parse-stringify: 3.0.1
+      i18next: 23.4.4
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react-icons@4.10.1(react@18.2.0):
     resolution: {integrity: sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==}
     peerDependencies:
@@ -7503,6 +7576,26 @@ packages:
       mdast-util-to-hast: 11.3.0
       unified: 10.1.2
     dev: true
+
+  /remix-i18next@5.3.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(i18next@23.4.4)(react-i18next@13.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-7KdgFnLTHk8mACdeqmGYGpubYJ61FOmfcPR2DcBQjrYCff2ktNRJhYn9QO2Q/OHcuyH0sbsGEKtY+6XbNrxdRw==}
+    peerDependencies:
+      '@remix-run/react': ^1.0.0
+      '@remix-run/server-runtime': ^1.0.0
+      i18next: ^23.1.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-i18next: ^13.0.0
+    dependencies:
+      '@remix-run/react': 1.19.3(react-dom@18.2.0)(react@18.2.0)
+      '@remix-run/server-runtime': 1.19.3
+      accept-language-parser: 1.5.0
+      i18next: 23.4.4
+      intl-parse-accept-language: 1.0.0
+      lru-cache: 7.18.3
+      react: 18.2.0
+      react-i18next: 13.2.0(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0)
+      use-consistent-value: 1.0.0(react@18.2.0)
+    dev: false
 
   /require-like@0.1.2:
     resolution: {integrity: sha512-oyrU88skkMtDdauHDuKVrgR+zuItqr6/c//FXzvmxRGMexSDc6hNvJInGW3LL46n+8b50RykrvwSUIIQH2LQ5A==}
@@ -8064,7 +8157,6 @@ packages:
 
   /tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: true
 
   /trough@2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
@@ -8338,6 +8430,16 @@ packages:
       tslib: 2.6.1
     dev: false
 
+  /use-consistent-value@1.0.0(react@18.2.0):
+    resolution: {integrity: sha512-enIOysu0IwqjafsUXvhZPajB6UYjxwu8w38xWaHLfVs1onIyg2c0DwPgcknxqO0TpYpAHXdFDXOp7Cs9HbTIkw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      fast-deep-equal: 3.1.3
+      react: 18.2.0
+    dev: false
+
   /use-sidecar@1.1.2(@types/react@18.0.35)(react@18.2.0):
     resolution: {integrity: sha512-epTbsLuzZ7lPClpz2TyryBfztm7m+28DlEv2ZCQ3MDr5ssiwyOwGH/e5F9CkfWjJ1t4clvI58yF822/GUkjjhw==}
     engines: {node: '>=10'}
@@ -8460,6 +8562,11 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /void-elements@3.1.0:
+    resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
@@ -8479,14 +8586,12 @@ packages:
 
   /webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: true
 
   /whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    dev: true
 
   /which-boxed-primitive@1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}

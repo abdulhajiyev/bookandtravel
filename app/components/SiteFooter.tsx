@@ -109,7 +109,10 @@ export function SiteFooter() {
                 <ul role="list" className="mt-4 space-y-4">
                   {footerNavigation.privacy.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="  ">
+                      <a
+                        href={item.href}
+                        className="transition-colors hover:text-foreground/80"
+                      >
                         {item.name}
                       </a>
                     </li>
@@ -125,19 +128,31 @@ export function SiteFooter() {
                   <p>+994 55 200 99 99</p>
                 </span>
                 <div className="flex gap-2">
-                  <a href="/" className="w-10 h-10 block mt-5">
+                  <a
+                    href="/"
+                    className="w-10 h-10 block mt-5 transition-colors hover:text-foreground/80"
+                  >
                     <FaInstagramSquare className="h-full w-full" />
                   </a>
 
-                  <a href="/" className="w-10 h-10 block mt-5">
+                  <a
+                    href="/"
+                    className="w-10 h-10 block mt-5 transition-colors hover:text-foreground/80"
+                  >
                     <FaFacebookSquare className="h-full w-full" />
                   </a>
 
-                  <a href="/" className="w-10 h-10 block mt-5">
+                  <a
+                    href="/"
+                    className="w-10 h-10 block mt-5 transition-colors hover:text-foreground/80"
+                  >
                     <FaLinkedin className="h-full w-full" />
                   </a>
 
-                  <a href="/" className="w-10 h-10 block mt-5">
+                  <a
+                    href="/"
+                    className="w-10 h-10 block mt-5 transition-colors hover:text-foreground/80"
+                  >
                     <FaTelegramPlane className="h-full w-full" />
                   </a>
                 </div>
@@ -147,7 +162,10 @@ export function SiteFooter() {
                 <ul role="list" className="mt-4 space-y-4">
                   {footerNavigation.help.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="  ">
+                      <a
+                        href={item.href}
+                        className="transition-colors hover:text-foreground/80"
+                      >
                         {item.name}
                       </a>
                     </li>

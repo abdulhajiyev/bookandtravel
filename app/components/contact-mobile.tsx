@@ -24,6 +24,8 @@ import { toast } from '~/components/ui/use-toast';
 import { Input } from './ui/input';
 import { PiPhoneCallFill } from 'react-icons/pi';
 import { SearchIcon } from 'lucide-react';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const FormSchema = z.object({
   issues: z
@@ -34,6 +36,9 @@ const FormSchema = z.object({
 });
 
 export function ContactMobile() {
+
+  const {i18n} = useTranslation();
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -61,13 +66,11 @@ export function ContactMobile() {
 
       <div className="bg-[url('../assets/images/contact-banner.png')] opacity-100 bg- duration-300 bg-cover bg-center h-72 w-full text-6xl text-white font-semibold flex   items-center">
         <p className="text-black uppercase w-1/4 font-bold text-3xl p-12 flex mr-auto z-10">
-          Contact Us
+          {t('contact us')}
         </p>
         <span className="absolute from-white bg-gradient-to-r w-full h-72" />
       </div>
-      <p className="text-2xl font-bold my-10 text-start w-full px-2">
-        Contact
-      </p>
+      <p className="text-2xl font-bold my-10 text-start w-full px-2">Contact</p>
       <Form {...form}>
         <form
           // onSubmit={form.handleSubmit(onSubmit)}

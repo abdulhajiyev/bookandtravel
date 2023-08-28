@@ -27,6 +27,8 @@ import { Separator } from '~/components/ui/separator';
 import { FaWhatsapp } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
 import Logo from '../assets/images/logo.svg';
+import i18n from '~/i18n';
+import { useTranslation } from 'react-i18next';
 
 const products = [
   {
@@ -72,12 +74,20 @@ function classNames(...classes: any) {
 export function MobileNav() {
   // const [open, setOpen] = React.useState(false);
 
+  const {i18n} = useTranslation();
+
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n); // i18n.language contains the language assigned to lng in i18n.js file.
+
+  const chooseLanguage = (e) => {
+    e.preventDefault();
+    i18n.changeLanguage(e.target.value); // i18n.changeLanguage() is used to change the language assigned to lng in i18n.js file.
+    setSelectedLanguage(e.target.value);
+  };
+
   return (
     <div className="flex items-center w-full justify-between md:hidden">
       <NavLink to="/" className="flex items-center space-x-2 header-link">
-        <div
-          className="bg-white p-1 overflow-x-auto overflow-y-auto mt-5"
-        >
+        <div className="bg-white p-1 overflow-x-auto overflow-y-auto mt-5">
           <img src={Logo} alt="Logo" className="w-20" />
         </div>
       </NavLink>
@@ -94,11 +104,13 @@ export function MobileNav() {
           <div className="flex items-center justify-evenly flex-col">
             {/* <Icons.Logo className="mr-2 h-4 w-4" /> */}
             <div className="flex gap-5 font-bold pt-4">
-              {siteConfig.langs.map((lang) => (
-                <NavLink key={lang} to={lang === 'en' ? '/' : `/${lang}`}>
-                  {lang}
-                </NavLink>
-              ))}
+              <select
+                defaultValue={selectedLanguage}
+                onChange={chooseLanguage}
+              >
+                <option value="az">Azerbaijani</option>
+                <option value="en">English</option>
+              </select>
             </div>
             <Separator className="my-4" />
             {/* <span className="font-bold">{siteConfig.name}</span>
@@ -162,7 +174,7 @@ export function MobileNav() {
               className="rounded-full bg-primary h-10 px-4 py-2 flex items-center mt-5 justify-center text-secondary mx-5"
             >
               <FaWhatsapp className="h-6 w-6 text-black" />
-              <p className='text-black'>+994 55 200 99 99</p>
+              <p className="text-black">+994 55 200 99 99</p>
             </a>
           </ScrollArea>
         </SheetContent>
