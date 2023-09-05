@@ -18,7 +18,7 @@ export function MainFot() {
           {siteConfig.name}
         </span>
       </Link>
-      <nav className="flex items-center space-x-6 text-sm font-medium">
+      {/* <nav className="flex items-center space-x-6 text-sm font-medium">
         <Link
           to="/hello"
           className={cn(
@@ -61,7 +61,7 @@ export function MainFot() {
         >
           Examples
         </Link>
-      </nav>
+      </nav> */}
     </div>
   );
 }

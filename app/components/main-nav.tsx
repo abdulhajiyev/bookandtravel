@@ -15,7 +15,7 @@ export function MainNav() {
           <img src={Logo} alt="Logo" />
         </div>
       </Link>
-      <nav className="flex items-center space-x-6 text-sm font-medium">
+      {/* <nav className="flex items-center space-x-6 text-sm font-medium">
         <NavLink
           to="/hello"
           className={cn(
@@ -58,7 +58,7 @@ export function MainNav() {
         >
           Examples
         </Link>
-      </nav>
+      </nav> */}
     </div>
   );
 }
