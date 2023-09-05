@@ -149,13 +149,13 @@ export function MobileFot() {
             </AccordionItem>
           </Accordion>
           <a
-            href="https://wa.me/+994552009999"
+            href="https://wa.me/+994502009999"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-primary h-10 px-4 py-2 flex items-center mt-5 justify-center text-secondary mx-5"
           >
             <FaWhatsapp className="h-6 w-6" />
-            <p>+994 55 200 99 99</p>
+            <p>+994 50 200 99 99</p>
           </a>
         </ScrollArea>
       </SheetContent>

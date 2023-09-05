@@ -117,7 +117,7 @@ export function SiteFooter() {
                 <span className="flex justify-start">
                   <PiPhoneCallFill className="h-6 w-6" />
                   <p>
-                    <a href="tel:+994552009999">+994 55 200 99 99</a>
+                    <a href="tel:+994502009999">+994 50 200 99 99</a>
                   </p>
                 </span>
                 <div className="flex gap-2">
