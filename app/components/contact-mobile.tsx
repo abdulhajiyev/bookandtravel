@@ -57,7 +57,7 @@ export function ContactMobile() {
     });
   }
   return (
-    <div className="flex items-center w-screen justify-between md:hidden flex-col">
+    <div className="flex items-center w-screen justify-between md:hidden flex-col text-black">
       {/* <span className="absolute from-white bg-gradient-to-r w-full h-72" /> */}
       {/* <div>
         <img src={Banner} alt="Banner" className="h-72 object-cover"></img>

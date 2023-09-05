@@ -27,8 +27,18 @@ import { Separator } from '~/components/ui/separator';
 import { FaWhatsapp } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
 import Logo from '../assets/images/logo.svg';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '~/components/ui/select';
 import i18n from '~/i18n';
 import { useTranslation } from 'react-i18next';
+import { changeLanguage } from 'i18next';
 
 const products = [
   {
@@ -103,14 +113,19 @@ export function MobileNav() {
         <SheetContent side="right" className="pr-0 bg-black text-white">
           <div className="flex items-center justify-evenly flex-col">
             {/* <Icons.Logo className="mr-2 h-4 w-4" /> */}
-            <div className="flex gap-5 font-bold pt-4">
-              <select
-                defaultValue={selectedLanguage}
-                onChange={chooseLanguage}
-              >
-                <option value="az">Azerbaijani</option>
-                <option value="en">English</option>
-              </select>
+            <div className="flex gap-5 font-bold pt-4 text-black">
+              <Select onValueChange={changeLanguage}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Language"/>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    {/* <SelectLabel>Language</SelectLabel> */}
+                    <SelectItem value="en">English</SelectItem>
+                    <SelectItem value="az">Azerbaijani</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </div>
             <Separator className="my-4" />
             {/* <span className="font-bold">{siteConfig.name}</span>

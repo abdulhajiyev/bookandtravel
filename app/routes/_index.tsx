@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <section className="bg-white dark:bg-gray-900 my-32 md:my-0">
       <div className="px-4 mx-auto max-w-screen-xl">
-        <div className="grid gap-8 items-center lg:gap-12 lg:grid-cols-12">
+        <div className="grid gap-8 items-center lg:gap-12 lg:grid-cols-12 md:py-16">
           <div className="col-span-6 text-center sm:mb-6 lg:text-left lg:mb-0">
             <svg
               className="mx-auto mb-4 w-12 h-12 text-gray-500 dark:text-gray-400 lg:ml-0"
