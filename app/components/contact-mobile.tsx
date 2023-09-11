@@ -2,7 +2,6 @@ import { Link } from '@remix-run/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-
 import { Button } from '~/components/ui/button';
 import {
   Form,
@@ -22,10 +21,19 @@ import {
 } from '~/components/ui/select';
 import { toast } from '~/components/ui/use-toast';
 import { Input } from './ui/input';
-import { PiPhoneCallFill } from 'react-icons/pi';
-import { SearchIcon } from 'lucide-react';
+import { FiPhoneCall, FiMail } from 'react-icons/fi';
+import { BiSolidPhoneCall } from 'react-icons/bi';
+import { IoLocation } from 'react-icons/io5';
+import { HiMail } from 'react-icons/hi';
 import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
+import { Textarea } from './ui/textarea';
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaLinkedin,
+  FaTelegramPlane,
+} from 'react-icons/fa';
 
 const FormSchema = z.object({
   issues: z
@@ -36,26 +44,10 @@ const FormSchema = z.object({
 });
 
 export function ContactMobile() {
+  const { i18n } = useTranslation();
 
-  const {i18n} = useTranslation();
-
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-  });
-
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: 'You submitted the following values:',
-      description: (
-        <>
-          <div className="bg-red-500 w-36 h-64">SALAM</div>
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-          </pre>
-        </>
-      ),
-    });
-  }
+  const form = useForm();
+  
   return (
     <div className="flex items-center w-screen justify-between md:hidden flex-col text-black">
       {/* <span className="absolute from-white bg-gradient-to-r w-full h-72" /> */}
@@ -64,17 +56,17 @@ export function ContactMobile() {
         <Label className="absolute">Contact Us</Label>
       </div> */}
 
-      <div className="bg-[url('../assets/images/contact-banner.png')] opacity-100 bg- duration-300 bg-cover bg-center h-72 w-full text-6xl text-white font-semibold flex   items-center">
+      <div className="bg-[url('../assets/images/contact-banner.png')] opacity-100 duration-300 bg-cover bg-center h-72 w-full text-6xl text-white font-semibold flex items-center">
         <p className="text-black uppercase w-1/4 font-bold text-3xl p-12 flex mr-auto z-10">
           {t('contact us')}
         </p>
         <span className="absolute from-white bg-gradient-to-r w-full h-72" />
       </div>
-      <p className="text-2xl font-bold my-10 text-start w-full px-2">Contact</p>
+      <p className="text-2xl font-bold my-10 text-start w-full px-5">Contact</p>
       <Form {...form}>
         <form
           // onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full px-2 space-y-6"
+          className="w-full px-5 space-y-6"
         >
           <FormField
             // control={form.control}
@@ -119,23 +111,92 @@ export function ContactMobile() {
             render={({ field }) => (
               <FormItem>
                 <Input
-                  leftIcon={<SearchIcon className="h-5 w-5 text-primary" />}
+                  placeholder="Phone"
+                  leftIcon={<FiPhoneCall className="h-5 w-5 text-primary" />}
                 />
-                {/* <Input
-                    type="tel"
-                    placeholder="Phone"
-                    className="pl-12 pr-4"
-                  /> */}
-
                 <FormMessage />
               </FormItem>
             )}
           />
+          <FormField
+            // control={form.control}
+            name="e-mail"
+            render={({ field }) => (
+              <FormItem>
+                <Input
+                  placeholder="E-mail"
+                  leftIcon={<FiMail className="h-5 w-5 text-primary" />}
+                />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Textarea placeholder="Message" />
           <Button className="w-full space-y-6" type="submit">
             Send request
           </Button>
         </form>
       </Form>
+      <p className="text-2xl font-bold my-10 text-start w-full px-5 uppercase">
+        Our Address
+      </p>
+      <div className="flex w-full flex-col gap-8">
+        <span className="flex justify-start w-full gap-5 px-5 items-center">
+          <IoLocation className="h-10 w-10 text-primary min-w-min" />
+          <a href="https://goo.gl/maps/bXFhQFutRBwkWbCM7">
+            Baku city, Aşıq Ali, 4, Narimanov, AZ1072 "Sheher Baghları"
+            residence.
+          </a>
+        </span>
+        <span className="flex justify-start w-full gap-5 px-5 items-center">
+          <BiSolidPhoneCall className="h-10 w-10 text-primary min-w-min" />
+          <a href="tel:+994502009999">+994 50 200 99 99</a>
+        </span>
+        <span className="flex justify-start w-full gap-5 px-5 items-center">
+          <HiMail className="h-10 w-10 text-primary min-w-min" />
+          <a href="mailto:email@example.com"> bookand.travel </a>
+        </span>
+
+        {/* Social icons */}
+        <div className="flex gap-2 px-5">
+          <a
+            href="https://www.instagram.com/bookand.travel/"
+            className="w-11 h-11 block transition-colors hover:text-foreground/80"
+          >
+            <FaInstagramSquare className="h-full w-full text-primary" />
+          </a>
+
+          <a
+            href="https://www.facebook.com/bookand.travel.az"
+            className="w-11 h-11 block transition-colors hover:text-foreground/80"
+          >
+            <FaFacebookSquare className="h-full w-full text-primary" />
+          </a>
+
+          <a
+            href="/"
+            className="w-11 h-11 block transition-colors hover:text-foreground/80"
+          >
+            <FaLinkedin className="h-full w-full text-primary" />
+          </a>
+
+          <a
+            href="/"
+            className="w-11 h-11 block transition-colors hover:text-foreground/80"
+          >
+            <FaTelegramPlane className="h-full w-full text-primary" />
+          </a>
+        </div>
+
+        {/* Embed map */}
+
+        <iframe
+          className="flex justify-center items-center mx-5 border-8 rounded-md border-black h-48 mb-16"
+          title="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.377387181705!2d49.86039777653565!3d40.4004897566268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d7b4b318c95%3A0xdaeaee8247875e7!2zxZ7JmWjJmXIgQmHEn2xhcsSx!5e0!3m2!1sen!2saz!4v1694369965343!5m2!1sen!2saz"
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 }
