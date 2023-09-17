@@ -49,7 +49,7 @@ export function ContactMobile() {
   const form = useForm();
   
   return (
-    <div className="flex items-center w-screen justify-between md:hidden flex-col text-black">
+    <div className="flex items-center w-full justify-between md:hidden flex-col text-black">
       {/* <span className="absolute from-white bg-gradient-to-r w-full h-72" /> */}
       {/* <div>
         <img src={Banner} alt="Banner" className="h-72 object-cover"></img>

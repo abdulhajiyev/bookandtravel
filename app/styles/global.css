@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,8 +58,12 @@
   body {
     /*@apply bg-background text-foreground;*/
     /* @apply bg-white text-foreground; */
-    @apply bg-white text-foreground min-h-screen antialiased flex flex-col;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+
+    /* @apply flex min-h-screen flex-col bg-white text-foreground antialiased; */
+
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 
   .header-link.active {

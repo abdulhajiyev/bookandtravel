@@ -10,6 +10,7 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 import globalcss from './styles/global.css';
+import embla from './styles/embla.css';
 import { SiteHeader } from './components/SiteHeader';
 import { SiteFooter } from './components/SiteFooter';
 import { useChangeLanguage } from 'remix-i18next';
@@ -19,8 +20,9 @@ import i18next from 'i18n.server';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: globalcss },
+  // { rel: 'stylesheet', href: embla },
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
-];
+]
 
 export async function loader({ request }: LoaderArgs) {
   let locale = await i18next.getLocale(request);
